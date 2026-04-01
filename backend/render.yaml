@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ict-impact-dashboard-backend
+    runtime: python
+    pythonVersion: 3.11
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    disk:
+      name: database
+      mountPath: /app/database
+      sizeGB: 1
