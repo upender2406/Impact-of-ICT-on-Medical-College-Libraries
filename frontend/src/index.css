@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+  }
+  
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure all containers respect viewport width */
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Responsive table utilities */
+  .table-responsive {
+    @apply w-full overflow-hidden;
+  }
+  
+  /* Compact spacing for admin tables */
+  .admin-table {
+    @apply text-xs;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    @apply px-2 py-2;
+  }
+}
